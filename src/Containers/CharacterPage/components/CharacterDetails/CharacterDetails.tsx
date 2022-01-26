@@ -1,6 +1,6 @@
 import { EpisodesList } from "../EpisodesList";
 
-import { UpLoadPhoto } from "../../../../Components/UpLoadPhoto";
+import { UpLoadPhoto } from "../UpLoadPhoto";
 
 import type { CharacterDetailsProps } from "../../types";
 

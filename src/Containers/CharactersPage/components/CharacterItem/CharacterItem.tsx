@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
+import Grid from "@mui/material/Grid";
 
-import { useStyles } from "./styles";
+import { Loading } from "../../../../Components/Loading";
+import { Item } from "./styles";
 import { urls } from "../../../../utils/constants";
 
 import type { CharacterItemProps } from "../../types";
@@ -13,20 +14,26 @@ export const CharacterItem: React.FC<CharacterItemProps> = ({
   image,
   status,
 }): JSX.Element => {
-  const classes = useStyles();
+  const [loaded, setLoaded] = useState<boolean>(true);
 
   const characterImage = localStorage.getItem(id) ?? image;
 
+  const onLoad = () => {
+    setLoaded(false);
+  };
+
   return (
-    <Grid item xs={6} sm={3}>
-      <Paper className={classes.paper}>
+    <Grid item xs={2} sm={4} md={4}>
+      <Item>
+        {loaded && <Loading />}
+
         <Link to={`${urls.character}/${id}`}>
-          <img src={characterImage} alt="" />
+          <img src={characterImage} alt="" onLoad={onLoad} />
         </Link>
 
         <div>{name}</div>
         <div>{status}</div>
-      </Paper>
+      </Item>
     </Grid>
   );
 };

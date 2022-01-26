@@ -3,7 +3,6 @@ import React from "react";
 import { PaginationBlock } from "../../Components/PaginationBlock";
 import { Template } from "../../Components/Template";
 import { CharactersList } from "./components/CharactersList";
-
 import { useCharactersPageHook } from "./useCharactersPageHook";
 import { useGetCharacters } from "./useGetCharacters";
 

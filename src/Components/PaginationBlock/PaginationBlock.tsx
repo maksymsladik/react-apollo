@@ -1,6 +1,4 @@
-import Pagination from "@material-ui/lab/Pagination";
-
-import { useStyles } from "./styles";
+import Pagination from "@mui/material/Pagination";
 
 import type { PaginationBlockProps } from "./types";
 
@@ -9,16 +7,12 @@ export const PaginationBlock: React.FC<PaginationBlockProps> = ({
   page,
   setPage,
 }): JSX.Element => {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
-      <Pagination
-        count={count}
-        page={page}
-        color="primary"
-        onChange={(event, value) => setPage(value)}
-      />
-    </div>
+    <Pagination
+      count={count}
+      page={page}
+      color="primary"
+      onChange={(event, value) => setPage(value)}
+    />
   );
 };

@@ -1,5 +1,5 @@
-import { Loading } from "../Loading";
-import { Error } from "../Error";
+import { LoadingResponse } from "../LoadingResponse";
+import { ErrorResponse } from "../ErrorResponse";
 
 import type { TemplateProps } from "./types";
 
@@ -8,9 +8,9 @@ export const Template: React.FC<TemplateProps> = ({
   error,
   children,
 }): JSX.Element => {
-  if (loading) return <Loading />;
+  if (loading) return <LoadingResponse />;
 
-  if (error) return <Error />;
+  if (error) return <ErrorResponse />;
 
   return <div>{children}</div>;
 };

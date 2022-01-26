@@ -14,12 +14,14 @@ export const Router: React.FC = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Switch>
-        <Route exact path={urls.base} component={CharactersPage} />
+        <div className="container">
+          <Route exact path={urls.base} component={CharactersPage} />
 
-        <Route
-          path={`${urls.base}${urls.character}${urls.selectedItem}`}
-          render={(props) => <MainLayout {...props} />}
-        />
+          <Route
+            path={`${urls.base}${urls.character}${urls.selectedItem}`}
+            render={(props) => <MainLayout {...props} />}
+          />
+        </div>
 
         <Redirect to={urls.base} />
       </Switch>
