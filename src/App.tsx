@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 
+import Box from "@mui/material/Box";
+
 import { Router } from "./router";
 import { ApolloSettings } from "./utils/ApolloSettings";
 
@@ -8,7 +10,17 @@ export const App: React.FC = (): JSX.Element => {
   return (
     <BrowserRouter>
       <ApolloSettings>
-        <Router />
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column",
+            maxWidth: "1400px",
+            margin: "0 auto",
+          }}
+        >
+          <Router />
+        </Box>
       </ApolloSettings>
     </BrowserRouter>
   );

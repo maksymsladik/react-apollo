@@ -26,9 +26,25 @@ export const UpLoadPhoto: React.FC<UpLoadPhotoProps> = ({
         <div>Edit</div>
       </label>
 
-      <img src={characterImage} alt="" onLoad={onLoad} />
-
-      {loaded && <Loading />}
+      <div
+        style={{
+          height: "300px",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <img
+          src={characterImage}
+          alt=""
+          onLoad={onLoad}
+          style={{ width: "100%" }}
+        />
+        {loaded && (
+          <span style={{ position: "absolute", top: "50%", left: "50%" }}>
+            <Loading />
+          </span>
+        )}
+      </div>
     </div>
   );
 };

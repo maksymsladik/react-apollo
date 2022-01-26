@@ -1,5 +1,4 @@
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
 
 import { CharacterItem } from "../CharacterItem";
 
@@ -9,16 +8,16 @@ export const CharactersList: React.FC<CharactersListProps> = ({
   data,
 }): JSX.Element => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid
-        container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
-      >
-        {data?.characters?.results.map((character: CharacterItemProps) => (
-          <CharacterItem key={character.id} {...character} />
-        ))}
-      </Grid>
+    <Box
+      display="grid"
+      gridTemplateColumns="repeat(auto-fill, minmax(min(20rem, 100%), 1fr))"
+      gap={2}
+      marginBottom="20px"
+      width="100%"
+    >
+      {data?.characters?.results.map((character: CharacterItemProps) => (
+        <CharacterItem key={character.id} {...character} />
+      ))}
     </Box>
   );
 };

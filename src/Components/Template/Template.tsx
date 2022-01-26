@@ -12,5 +12,5 @@ export const Template: React.FC<TemplateProps> = ({
 
   if (error) return <ErrorResponse />;
 
-  return <div>{children}</div>;
+  return <>{children}</>;
 };
