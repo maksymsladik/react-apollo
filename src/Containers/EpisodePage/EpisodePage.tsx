@@ -1,7 +1,6 @@
 import React from "react";
 import { RouteComponentProps, useParams } from "react-router-dom";
 
-import { NavigationPanel } from "../../Components/NavigationPanel";
 import { Template } from "../../Components/Template";
 import { EpisodeDetails } from "./components/EpisodeDetails";
 import { useGetEpisodeById } from "./useGetEpisodeById";
@@ -14,8 +13,6 @@ export const EpisodePage: React.FC<RouteComponentProps> = (): JSX.Element => {
   return (
     <Template loading={loading} error={error}>
       <EpisodeDetails data={data} />
-
-      <NavigationPanel />
     </Template>
   );
 };

@@ -1,7 +1,6 @@
 import React from "react";
 import { RouteComponentProps, useParams } from "react-router-dom";
 
-import { NavigationPanel } from "../../Components/NavigationPanel";
 import { Template } from "../../Components/Template";
 import { CharacterDetails } from "./components/CharacterDetails";
 import { useCharacterPageHook } from "./useCharacterPageHook";
@@ -22,8 +21,6 @@ export const CharacterPage: React.FC<RouteComponentProps> = (): JSX.Element => {
         progressing={progressing}
         handleChange={handleChange}
       />
-
-      <NavigationPanel />
     </Template>
   );
 };
