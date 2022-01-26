@@ -21,6 +21,8 @@ export type CharactersVars = {
 export type CharacterDetailsProps = {
   data: CharactersData | undefined;
   characterId: string;
+  progressing: boolean;
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>, characterId: string) => void;
 };
 
 export type EpisodesListProps = {

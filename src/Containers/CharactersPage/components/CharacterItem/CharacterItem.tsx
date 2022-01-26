@@ -15,11 +15,13 @@ export const CharacterItem: React.FC<CharacterItemProps> = ({
 }): JSX.Element => {
   const classes = useStyles();
 
+  const characterImage = localStorage.getItem(id) ?? image;
+
   return (
     <Grid item xs={6} sm={3}>
       <Paper className={classes.paper}>
         <Link to={`${urls.character}/${id}`}>
-          <img src={image} alt="" />
+          <img src={characterImage} alt="" />
         </Link>
 
         <div>{name}</div>

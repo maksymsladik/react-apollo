@@ -1,0 +1,1 @@
+export { UpLoadPhoto } from "./UpLoadPhoto";
