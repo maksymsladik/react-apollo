@@ -1,0 +1,35 @@
+@import "/src/theme/base/variables";
+
+.link {
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+}
+
+.avatar {
+  width: 100%;
+  object-fit: contain;
+}
+
+.loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.name {
+  font-size: 20px;
+  font-weight: bolder;
+  padding-top: 8px;
+}
+
+.status {
+  padding: 5px 20px;
+  border-radius: 4px;
+  color: $white-100;
+  background: $red-1;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}

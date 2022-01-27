@@ -7,6 +7,7 @@ type Character = {
   id: string;
   name: string;
   image: string;
+  gender: string;
   episode: Episode[];
 };
 
@@ -31,6 +32,7 @@ export type EpisodesListProps = {
 };
 
 export type EpisodeItemProps = Episode & {
+  index: number;
   characterId: string;
 };
 

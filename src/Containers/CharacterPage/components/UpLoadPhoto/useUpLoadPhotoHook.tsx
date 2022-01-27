@@ -5,15 +5,13 @@ export const useUpLoadPhotoHook = (
   progressing: boolean,
   characterId: string
 ) => {
-  const [loaded, setLoaded] = useState<boolean>(false);
+  const [loaded, setLoaded] = useState<boolean>(true);
 
   const [characterImage, setCharacterImage] = useState<string | undefined>(
     undefined
   );
 
   useEffect(() => {
-    setLoaded(true);
-
     const savedImg = localStorage.getItem(characterId);
 
     const currentImg = savedImg ?? image;
@@ -24,6 +22,7 @@ export const useUpLoadPhotoHook = (
   const onLoad = (): void => {
     setLoaded(false);
   };
+
   return {
     loaded,
     characterImage,

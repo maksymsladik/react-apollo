@@ -1,7 +1,11 @@
+import ModeEditIcon from "@mui/icons-material/ModeEdit";
+
 import { useUpLoadPhotoHook } from "./useUpLoadPhotoHook";
 import { Loading } from "../../../../Components/Loading";
 
 import type { UpLoadPhotoProps } from "../../types";
+
+import styles from "./UpLoadPhotoStyles.module.scss";
 
 export const UpLoadPhoto: React.FC<UpLoadPhotoProps> = ({
   image,
@@ -16,35 +20,27 @@ export const UpLoadPhoto: React.FC<UpLoadPhotoProps> = ({
   );
 
   return (
-    <div>
-      <label>
+    <div className={styles.photoContent}>
+      <img src={characterImage} className={styles.img} onLoad={onLoad} alt="" />
+
+      {loaded && (
+        <span className={styles.loading}>
+          <Loading />
+        </span>
+      )}
+
+      <label className={styles.label}>
         <input
           type="file"
           onChange={(event) => handleChange(event, characterId)}
         />
 
-        <div>Edit</div>
-      </label>
-
-      <div
-        style={{
-          height: "300px",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <img
-          src={characterImage}
-          alt=""
-          onLoad={onLoad}
-          style={{ width: "100%" }}
-        />
-        {loaded && (
-          <span style={{ position: "absolute", top: "50%", left: "50%" }}>
-            <Loading />
-          </span>
+        {!loaded && (
+          <div className={styles.edit}>
+            <ModeEditIcon />
+          </div>
         )}
-      </div>
+      </label>
     </div>
   );
 };

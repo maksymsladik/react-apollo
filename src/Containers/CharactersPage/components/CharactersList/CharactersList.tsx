@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 
-import { CharacterItem } from "../CharacterItem";
+import { CharacterItem } from "../../../../Components/CharacterItem";
 
 import type { CharactersListProps, CharacterItemProps } from "../../types";
 

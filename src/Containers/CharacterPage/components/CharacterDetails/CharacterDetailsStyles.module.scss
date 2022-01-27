@@ -1,0 +1,12 @@
+.characterDetails {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+  .characterInfo {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 24px;
+    font-weight: bolder;
+  }
+}

@@ -17,6 +17,7 @@ export const App: React.FC = (): JSX.Element => {
             flexDirection: "column",
             maxWidth: "1400px",
             margin: "0 auto",
+            padding: "10px",
           }}
         >
           <Router />

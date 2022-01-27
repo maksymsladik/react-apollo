@@ -22,6 +22,7 @@ export const GET_CHARACTER_BY_ID = gql`
       id
       name
       image
+      gender
       episode {
         id
         name
@@ -35,9 +36,11 @@ export const GET_EPISODE_BY_ID = gql`
     episode (id: $id) {
       id
       name
+      air_date
       characters {
         id
         name
+        image
       }
     }
   }

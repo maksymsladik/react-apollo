@@ -4,6 +4,8 @@ import { UpLoadPhoto } from "../UpLoadPhoto";
 
 import type { CharacterDetailsProps } from "../../types";
 
+import styles from "./CharacterDetailsStyles.module.scss";
+
 export const CharacterDetails: React.FC<CharacterDetailsProps> = ({
   data,
   characterId,
@@ -11,15 +13,20 @@ export const CharacterDetails: React.FC<CharacterDetailsProps> = ({
   handleChange,
 }): JSX.Element => {
   return (
-    <div>
-      <UpLoadPhoto
-        image={data?.character.image}
-        characterId={characterId}
-        progressing={progressing}
-        handleChange={handleChange}
-      />
+    <div className={styles.characterDetails}>
+      <div>
+        <UpLoadPhoto
+          image={data?.character.image}
+          characterId={characterId}
+          progressing={progressing}
+          handleChange={handleChange}
+        />
 
-      <div>{data?.character.name}</div>
+        <div className={styles.characterInfo}>
+          <div>Name: {data?.character.name}</div>
+          <div>Gender: {data?.character.gender}</div>
+        </div>
+      </div>
 
       <EpisodesList
         episodes={data?.character.episode}

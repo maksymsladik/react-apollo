@@ -1,11 +1,13 @@
 type Characters = {
   id: string;
   name: string;
+  image: string;
 };
 
 type Episode = {
   id: string;
   name: string;
+  air_date: string;
   characters: Characters[];
 };
 
