@@ -1,0 +1,35 @@
+@import "/src/theme/base/variables";
+
+.header {
+  background: $blue-1;
+  padding: 12px 0 0;
+
+  .container {
+    max-width: 1919px;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    .row {
+      height: 75px;
+      display: flex;
+      align-items: center;
+
+      .logo {
+        display: block;
+        margin-right: 30px;
+      }
+
+      .navigation {
+        margin-left: 60px;
+
+        .link {
+          color: $blue-2;
+        }
+
+        .active_link {
+          color: $orange-1;
+        }
+      }
+    }
+  }
+}

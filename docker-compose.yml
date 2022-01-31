@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  web:
+    stdin_open: true
+    build: .
+    container_name: react-apollo
+    working_dir: /usr/src/app
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules

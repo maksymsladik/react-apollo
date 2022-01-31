@@ -1,4 +1,4 @@
-import { CharactersList } from "../CharactersList";
+import { CharactersList } from "../../../../Components/CharactersList";
 
 import type { EpisodeDetailsProps } from "../../types";
 

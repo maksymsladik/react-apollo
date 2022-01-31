@@ -22,9 +22,3 @@ export type EpisodeVars = {
 export type EpisodeDetailsProps = {
   data: EpisodeData | undefined;
 };
-
-export type CharactersListProps = {
-  characters: Characters[] | undefined;
-};
-
-export type CharacterItemProps = Characters;

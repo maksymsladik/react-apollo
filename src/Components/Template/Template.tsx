@@ -1,3 +1,5 @@
+import Box from "@mui/material/Box";
+
 import { LoadingResponse } from "../LoadingResponse";
 import { ErrorResponse } from "../ErrorResponse";
 
@@ -8,9 +10,28 @@ export const Template: React.FC<TemplateProps> = ({
   error,
   children,
 }): JSX.Element => {
-  if (loading) return <LoadingResponse />;
+  const content = {
+    loading: <LoadingResponse />,
+    error: <ErrorResponse />,
+    children,
+  };
 
-  if (error) return <ErrorResponse />;
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+        maxWidth: "1400px",
+        margin: "0 auto",
+        padding: "10px",
+      }}
+    >
+      {loading && content.loading}
 
-  return <>{children}</>;
+      {error && content.error}
+
+      {!loading && !error && content.children}
+    </Box>
+  );
 };

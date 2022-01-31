@@ -1,8 +1,8 @@
 import React from "react";
 
-import { PaginationBlock } from "../../Components/PaginationBlock";
 import { Template } from "../../Components/Template";
-import { CharactersList } from "./components/CharactersList";
+import { CharactersList } from "../../Components/CharactersList";
+import { PaginationBlock } from "../../Components/PaginationBlock";
 import { useCharactersPageHook } from "./useCharactersPageHook";
 import { useGetCharacters } from "./useGetCharacters";
 
@@ -13,7 +13,7 @@ export const CharactersPage: React.FC = (): JSX.Element => {
 
   return (
     <Template loading={loading} error={error}>
-      <CharactersList data={data} />
+      <CharactersList characters={data?.characters?.results} />
 
       <PaginationBlock
         count={data?.characters.info.pages}

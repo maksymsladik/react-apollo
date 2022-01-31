@@ -19,9 +19,3 @@ export type CharactersData = {
 export type CharactersVars = {
   page: number;
 };
-
-export type CharactersListProps = {
-  data: CharactersData | undefined;
-};
-
-export type CharacterItemProps = Characters;

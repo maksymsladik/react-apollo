@@ -1,8 +1,8 @@
 import Box from "@mui/material/Box";
 
-import { CharacterItem } from "../../../../Components/CharacterItem";
+import { CharacterItem } from "../CharacterItem";
 
-import type { CharactersListProps, CharacterItemProps } from "../../types";
+import type { CharactersListProps, Character } from "./types";
 
 export const CharactersList: React.FC<CharactersListProps> = ({
   characters,
@@ -15,7 +15,7 @@ export const CharactersList: React.FC<CharactersListProps> = ({
       marginBottom="20px"
       width="100%"
     >
-      {characters?.map((character: CharacterItemProps) => (
+      {characters?.map((character: Character) => (
         <CharacterItem key={character.id} {...character} />
       ))}
     </Box>

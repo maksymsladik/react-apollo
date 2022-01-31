@@ -1,5 +1,6 @@
-import { EpisodesList } from "../EpisodesList";
+import Grid from "@mui/material/Grid";
 
+import { EpisodesList } from "../EpisodesList";
 import { UpLoadPhoto } from "../UpLoadPhoto";
 
 import type { CharacterDetailsProps } from "../../types";
@@ -13,25 +14,35 @@ export const CharacterDetails: React.FC<CharacterDetailsProps> = ({
   handleChange,
 }): JSX.Element => {
   return (
-    <div className={styles.characterDetails}>
-      <div>
-        <UpLoadPhoto
-          image={data?.character.image}
-          characterId={characterId}
-          progressing={progressing}
-          handleChange={handleChange}
-        />
+    <Grid sx={{ flexGrow: 1 }} container spacing={2}>
+      <Grid item xs={12}>
+        <Grid
+          container
+          justifyContent="center"
+          spacing={16}
+          style={{ marginTop: "0" }}
+        >
+          <Grid item>
+            <UpLoadPhoto
+              image={data?.character.image}
+              characterId={characterId}
+              progressing={progressing}
+              handleChange={handleChange}
+            />
+            <div className={styles.characterInfo}>
+              <div>Name: {data?.character.name}</div>
+              <div>Gender: {data?.character.gender}</div>
+            </div>
+          </Grid>
 
-        <div className={styles.characterInfo}>
-          <div>Name: {data?.character.name}</div>
-          <div>Gender: {data?.character.gender}</div>
-        </div>
-      </div>
-
-      <EpisodesList
-        episodes={data?.character.episode}
-        characterId={characterId}
-      />
-    </div>
+          <Grid item>
+            <EpisodesList
+              episodes={data?.character.episode}
+              characterId={characterId}
+            />
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };

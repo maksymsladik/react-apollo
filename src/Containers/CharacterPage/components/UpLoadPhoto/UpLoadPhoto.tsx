@@ -1,3 +1,4 @@
+import Avatar from "@mui/material/Avatar";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
 
 import { useUpLoadPhotoHook } from "./useUpLoadPhotoHook";
@@ -21,7 +22,13 @@ export const UpLoadPhoto: React.FC<UpLoadPhotoProps> = ({
 
   return (
     <div className={styles.photoContent}>
-      <img src={characterImage} className={styles.img} onLoad={onLoad} alt="" />
+      <Avatar
+        variant="rounded"
+        src={characterImage}
+        sx={{ width: 500, height: 500 }}
+        onLoad={onLoad}
+        alt=""
+      />
 
       {loaded && (
         <span className={styles.loading}>

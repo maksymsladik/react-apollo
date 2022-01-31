@@ -35,14 +35,14 @@ export const MainLayout = (
       <Switch>
         <Route
           exact
-          path={match.path}
-          render={(props) => <CharacterPage {...props} />}
+          path={`${match.path}/${urls.episode}${urls.selectedItem}`}
+          render={(props) => <EpisodePage {...props} />}
         />
 
         <Route
           exact
-          path={`${match.path}/${urls.episode}${urls.selectedItem}`}
-          render={(props) => <EpisodePage {...props} />}
+          path={match.path}
+          render={(props) => <CharacterPage {...props} />}
         />
 
         <Redirect to={urls.base} />

@@ -25,7 +25,7 @@ export const CharacterItem: React.FC<CharacterItemProps> = ({
 
   return (
     <Item>
-      <Link className={styles.link} to={`${urls.character}/${id}`}>
+      <Link className={styles.link} to={`/${urls.character}/${id}`}>
         <img
           className={styles.avatar}
           src={characterImage}

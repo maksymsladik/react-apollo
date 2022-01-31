@@ -12,6 +12,8 @@ export const useUpLoadPhotoHook = (
   );
 
   useEffect(() => {
+    setLoaded(true);
+
     const savedImg = localStorage.getItem(characterId);
 
     const currentImg = savedImg ?? image;
